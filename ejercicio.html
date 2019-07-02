@@ -1,0 +1,209 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>NVL-JS-P14a</title>
+</head>
+<body>
+	<div id="listado">
+		<h1>Listado de algunas de mis peliculas favoritas</h1>
+	</div>
+
+	<script>
+		var pelis = [
+		{
+			"Nombre": "El señor de los anillos",
+			"Genero": "Fantasía"
+		},
+		{
+			"Nombre": "Regreso al Futuro",
+			"Genero": "Sci-Fi"
+		},
+		{
+			"Nombre": "Los increibles",
+			"Genero": "Animación"
+		},
+		{
+			"Nombre": "10 Cloverfield Lane",
+			"Genero": "Sci-Fi"
+		},
+		{
+			"Nombre": "2001 Odisea en el espacio",
+			"Genero": "Sci-Fi"
+		},
+		{
+			"Nombre": "Alien: el octavo pasajero",
+			"Genero": "Sci-Fi"
+		},
+		{
+			"Nombre": "Amelie",
+			"Genero": "Romance"
+		},
+		{
+			"Nombre": "American Beauty",
+			"Genero": "Drama"
+		},
+		{
+			"Nombre": "American History X",
+			"Genero": "Drama"
+		},
+		{
+			"Nombre": "Annie Hall",
+			"Genero": "Comedia"
+		},
+		{
+			"Nombre": "Apocalipsis Now",
+			"Genero": "Bélica"
+		},
+		{
+			"Nombre": "La llegada",
+			"Genero": "Sci-Fi"
+		},
+		{
+			"Nombre": "Baraka",
+			"Genero": "Documental"
+		},
+		{
+			"Nombre": "Rebobine por favor",
+			"Genero": "Comedia"
+		},
+		{
+			"Nombre": "Cómo ser John Malkovich",
+			"Genero": "Drama"
+		},
+		{
+			"Nombre": "Big Fish",
+			"Genero": "Comedia"
+		},
+		{
+			"Nombre": "El cisne negro",
+			"Genero": "Drama"
+		},
+		{
+			"Nombre": "Blade Runner",
+			"Genero": "Sci-Fi"
+		},
+		{
+			"Nombre": "El puente sobre el rio Kwai",
+			"Genero": "Drama"
+		},
+		{
+			"Nombre": "Hijos de los hombres",
+			"Genero": "Drama"
+		},
+		{
+			"Nombre": "La naranja mecánica",
+			"Genero": "Drama"
+		},
+		{
+			"Nombre": "La maldición de escorpión de Jade",
+			"Genero": "Comedia"
+		},
+		{
+			"Nombre": "Cube",
+			"Genero": "Sci-Fi"
+		},
+		{
+			"Nombre": "El cristal oscuro",
+			"Genero": "Animación"
+		},
+		{
+			"Nombre": "Desmontando a Harry",
+			"Genero": "Comedia"
+		},
+		{
+			"Nombre": "Donnie Darko",
+			"Genero": "Sci-Fi"
+		},
+		{
+			"Nombre": "Dune",
+			"Genero": "Sci-Fi"
+		},
+		{
+			"Nombre": "Dunkirk",
+			"Genero": "Bélica"
+		},
+		{
+			"Nombre": "Hard Candy",
+			"Genero": "Drama"
+		},
+		{
+			"Nombre": "Un final made in Hollywood",
+			"Genero": "Comedia"
+		},
+		{
+			"Nombre": "La La Land",
+			"Genero": "Romance"
+		},
+		{
+			"Nombre": "Match Point",
+			"Genero": "Romance"
+		},
+		{
+			"Nombre": "Monstruos S.A.",
+			"Genero": "Animación"
+		},
+		{
+			"Nombre": "El laberinto del fauno",
+			"Genero": "Drama"
+		},
+		{
+			"Nombre": "El perfume",
+			"Genero": "Drama"
+		},
+		{
+			"Nombre": "Primer",
+			"Genero": "Sci-Fi"
+		}
+		];
+
+		var generos = [
+		{
+			"Nombre": "Drama"
+		},
+		{
+			"Nombre": "Sci-Fi"
+		},
+		{
+			"Nombre": "Bélica"
+		},
+		{
+			"Nombre": "Animación"
+		},
+		{
+			"Nombre": "Romance"
+		},
+		{
+			"Nombre": "Comedia"
+		},
+		{
+			"Nombre": "Documental"
+		},
+		{
+			"Nombre": "Fantasía"
+		}
+		];
+		var listado = document.querySelector('#listado');
+
+		var lista = document.createElement("ul");
+		listado.appendChild(lista); 
+
+		for (i=0;i<pelis.length;i++){
+			var peli = document.createElement("li");
+			peli.textContent=pelis[i].Nombre;
+			peli.classList.add(pelis[i].Genero);
+			lista.appendChild(peli); 
+		}
+
+		for (g=0;g<generos.length;g++){
+			var gen = document.querySelectorAll('.'+generos[g].Nombre);
+			for (p=0;p<gen.length;p++){
+				gen[p].style.listStyleImage = "url('images/" +generos[g].Nombre +".png')";
+			}
+		}
+		
+	</script>
+</body>
+</html>
