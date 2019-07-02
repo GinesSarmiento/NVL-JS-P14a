@@ -10,8 +10,10 @@
 	<div id="listado">
 		<h1>Listado de algunas de mis peliculas favoritas</h1>
 	</div>
-
+	<div style="text-align: center;">Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 	<script>
+
+		//Declaramos el objeto que contiene las películas
 		var pelis = [
 		{
 			"Nombre": "El señor de los anillos",
@@ -159,6 +161,7 @@
 		}
 		];
 
+		//Declaramos un objeto que contiene los géneros
 		var generos = [
 		{
 			"Nombre": "Drama"
@@ -185,21 +188,34 @@
 			"Nombre": "Fantasía"
 		}
 		];
+
+		//Obtenemos el div en el que vamos a incluir la lista
 		var listado = document.querySelector('#listado');
 
+		//Cremaos la lista
 		var lista = document.createElement("ul");
+		//Añadimos la lista como elemento hijo del div listado
 		listado.appendChild(lista); 
 
+		//Recorremos el objeto peliculas
 		for (i=0;i<pelis.length;i++){
+			//Creamos cada elemento de la lista
 			var peli = document.createElement("li");
+			//Obtenemos el nombre de la película y lo añadimos como texto
 			peli.textContent=pelis[i].Nombre;
+			//Obtenemos el género de la película y lo añadimos como clase
 			peli.classList.add(pelis[i].Genero);
+			//Añadimos cada elemento dentro de la lista
 			lista.appendChild(peli); 
 		}
 
+		//Recorremos los diferentes generos
 		for (g=0;g<generos.length;g++){
+			//Obtenemos la referencia a todos los elementos que pertenecen al genero correspondiente
 			var gen = document.querySelectorAll('.'+generos[g].Nombre);
+			//Recorremos todos los elementos de dicho genero
 			for (p=0;p<gen.length;p++){
+				//Añadimos el atributo que incluirá el icono correspondiente a cada genero
 				gen[p].style.listStyleImage = "url('images/" +generos[g].Nombre +".png')";
 			}
 		}
